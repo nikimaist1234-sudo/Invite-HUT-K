@@ -45,31 +45,31 @@ document.addEventListener("DOMContentLoaded", () => {
   const oddOneOutLevels = [
     {
       words: ["Wake", "Sun", "Horizon", "Time"],
-      oddOneOut: 3, // Index of "Time" (Fruit is the odd one conceptually, but Time doesn't fit Wake Me Up)
+      oddOneOut: 3,
       hint: "Hint: Song - Wake Me Up",
       correctWord: "Time"
     },
     {
       words: ["Abyss", "Hour", "Darkness", "Legacy"],
-      oddOneOut: 3, // Index of "Legacy" (Water is the odd one conceptually)
+      oddOneOut: 3,
       hint: "Hint: Song - The Abyss",
       correctWord: "Legacy"
     },
     {
       words: ["Spirit", "Breathing", "Bleeding", "Feelings"],
-      oddOneOut: 0, // Index of "Spirit" (Laugh is the odd one conceptually, Spirit doesn't fit Cry For Me)
+      oddOneOut: 0,
       hint: "Hint: Song - Cry For Me",
       correctWord: "Spirit"
     },
     {
       words: ["Window", "Road", "Fame", "Destination"],
-      oddOneOut: 2, // Index of "Fame" (Child is the odd one conceptually)
+      oddOneOut: 2,
       hint: "Hint: Song - Drive",
       correctWord: "Fame"
     },
     {
       words: ["Tub", "Water", "Shadow", "Preacher"],
-      oddOneOut: 1, // Index of "Water" (Light is the odd one conceptually, but Water doesn't fit Baptized in Fear)
+      oddOneOut: 1,
       hint: "Hint: Song - Baptized in Fear",
       correctWord: "Water"
     }
@@ -379,7 +379,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function handleOddOneOutClick(clickedIndex) {
     if (oddOneOutLocked) return;
 
-    const level = oddOneOutOutLevels[oddOneOutIndex];
+    const level = oddOneOutLevels[oddOneOutIndex];
     const blocks = oddOneOutGrid.querySelectorAll(".odd-one-out-block");
     
     oddOneOutLocked = true;
