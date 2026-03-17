@@ -242,7 +242,8 @@ document.addEventListener("DOMContentLoaded", () => {
   function playShakeItInTheClub() {
     if (!friendResultAudio) return;
 
-    if (music) {
+    // Save nigara-falls position before switching
+    if (music && !music.paused) {
       nigaraFallsPauseTime = music.currentTime || 0;
       music.pause();
     }
@@ -252,17 +253,22 @@ document.addEventListener("DOMContentLoaded", () => {
       resultAudio.currentTime = 0;
     }
 
-    const currentSrc = (friendResultAudio.getAttribute("src") || "").toLowerCase().replace(/-/g, '').replace(/\s/g, '');
-    if (!currentSrc.includes("shakeitintheclub")) {
-      friendResultAudio.src = "Shake-it-in-the-club.mp3";
+    // Check if already playing the correct file
+    const currentSrc = (friendResultAudio.getAttribute("src") || "").toLowerCase();
+    if (!currentSrc.includes("shake-it-in-the-club")) {
+      friendResultAudio.src = "shake-it-in-the-club.mp3";
       friendResultAudio.load();
     }
 
     friendResultAudio.volume = 0.7;
     friendResultAudio.loop = true;
 
-    if (friendResultAudio.paused) {
-      friendResultAudio.play().catch(() => {});
+    // Try to play
+    const playPromise = friendResultAudio.play();
+    if (playPromise !== undefined) {
+      playPromise.catch((err) => {
+        console.log("Audio play failed:", err);
+      });
     }
   }
 
@@ -360,7 +366,6 @@ document.addEventListener("DOMContentLoaded", () => {
       oddOneOutNextBtn.textContent = "Next Level";
     }
     
-    // Force show the button with inline style for debugging
     oddOneOutNextBtn.style.display = "none";
 
     // Clear and rebuild grid
@@ -399,7 +404,7 @@ document.addEventListener("DOMContentLoaded", () => {
       oddOneOutResult.classList.add("incorrect-text");
     }
 
-    // Show the next button - using both class and inline style
+    // Show the next button
     oddOneOutNextBtn.style.display = "inline-block";
     oddOneOutNextBtn.style.visibility = "visible";
     oddOneOutNextBtn.style.opacity = "1";
@@ -408,6 +413,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function goToNextOddOneOutLevel() {
     if (oddOneOutIndex >= oddOneOutLevels.length - 1) {
       showOnlyPage("pageA");
+      // Start shake-it-in-the-club when transitioning to quiz intro
       playShakeItInTheClub();
       return;
     }
@@ -471,8 +477,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function showFriendQuizResults() {
     showOnlyPage("friendQuizResults");
+    // Ensure shake-it-in-the-club continues playing on results page
+    if (friendResultAudio && friendResultAudio.paused) {
+      playShakeItInTheClub();
+    }
     rainBlueSparks();
-
     friendQuizScore.textContent = `You got ${friendQuizCorrect}/${friendQuizQuestions.length} questions correct!`;
     friendQuizMessage.textContent =
       friendQuizCorrect > 15
@@ -481,11 +490,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function unlockInvite() {
+    // Stop shake-it-in-the-club
     stopShakeItInTheClub();
     
     document.body.classList.remove("locked");
     document.body.classList.add("scroll-mode");
     
+    // Resume nigara-falls from where it was paused
     if (music) {
       const currentSrc = (music.getAttribute("src") || "").toLowerCase().replace(/-/g, '');
       if (!currentSrc.includes("nigarafalls")) {
@@ -725,6 +736,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     
     showOnlyPage("friendQuizPage");
+    
+    // Ensure shake-it-in-the-club is playing when quiz starts
+    playShakeItInTheClub();
+    
     renderFriendQuizQuestion();
   });
 
