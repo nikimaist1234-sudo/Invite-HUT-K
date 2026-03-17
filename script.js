@@ -359,6 +359,8 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       oddOneOutNextBtn.textContent = "Next Level";
     }
+    
+    // Force show the button with inline style for debugging
     oddOneOutNextBtn.style.display = "none";
 
     // Clear and rebuild grid
@@ -397,7 +399,10 @@ document.addEventListener("DOMContentLoaded", () => {
       oddOneOutResult.classList.add("incorrect-text");
     }
 
+    // Show the next button - using both class and inline style
     oddOneOutNextBtn.style.display = "inline-block";
+    oddOneOutNextBtn.style.visibility = "visible";
+    oddOneOutNextBtn.style.opacity = "1";
   }
 
   function goToNextOddOneOutLevel() {
