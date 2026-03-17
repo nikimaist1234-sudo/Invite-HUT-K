@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>X'O Nights - Nikita Turns 21</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body class="locked">
+
+  <section id="page0" class="page active volume-page">
+    <div class="overlay volume-overlay">
+      <h1 class="big-title">Please turn your volume up</h1>
+      <h2>for a full experience 🔊</h2>
+      <button class="primary" id="startBtn" type="button">I'm ready</button>
+    </div>
+  </section>
+
+  <section id="page1" class="page">
+    <div class="overlay scramble-overlay">
+      <h1 class="big-title">You're Invited</h1>
+      <h2 class="invite-subtitle">X'O Nights: Nikita Turns 21</h2>
+
+      <div class="odd-one-out-shell">
+        <div class="odd-one-out-topbar">
+          <div class="odd-one-out-chip">Level <span id="oddOneOutLevelNumber">1</span>/5</div>
+        </div>
+
+        <p class="odd-one-out-status" id="oddOneOutStatus">Spot the odd one out. Three words relate to the song, one doesn't.</p>
+
+        <div class="odd-one-out-stage">
+          <p class="odd-one-out-hint" id="oddOneOutHint">Hint: Song - Wake Me Up</p>
+          
+          <div class="odd-one-out-grid" id="oddOneOutGrid">
+            <!-- Words will be inserted here by JS -->
+          </div>
+
+          <p class="odd-one-out-result" id="oddOneOutResult"></p>
+          
+          <button class="primary action-btn" id="oddOneOutNextBtn" type="button">Next Level</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pageA" class="page quiz-intro-page">
+    <div class="overlay quiz-intro-overlay">
+      <h1 class="big-title">How well do you know me</h1>
+      <h2 class="quiz-intro-sub">Answer all 21 questions to the best of your knowledge ability.</h2>
+      <p class="quiz-intro-copy">Press the start button to begin the quiz Keshav</p>
+      <button class="primary" id="beginFriendQuizBtn" type="button">Start</button>
+    </div>
+  </section>
+
+  <section id="friendQuizPage" class="page friend-quiz-page">
+    <div class="overlay friend-quiz-overlay">
+      <h1 class="quiz-heading">How well do you know me</h1>
+      <p class="quiz-progress" id="friendQuizProgress">Question 1 of 21</p>
+
+      <div class="friend-quiz-card">
+        <p class="friend-quiz-extra" id="friendQuizExtra"></p>
+        <h2 class="friend-quiz-question" id="friendQuizQuestion">Question text</h2>
+        <p class="friend-quiz-options" id="friendQuizOptions"></p>
+        <input id="friendQuizAnswer" class="friend-quiz-input" type="text" autocomplete="off" spellcheck="false" placeholder="Tap here to type your answer" />
+        <p class="friend-quiz-error" id="friendQuizError"></p>
+        <button class="primary" id="friendQuizNextBtn" type="button">Next</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="friendQuizResults" class="page friend-results-page">
+    <div class="results-sparks" id="resultsSparks"></div>
+    <div class="overlay friend-results-overlay">
+      <h1 class="big-title results-title">Well done, You successfully managed to answer all the questions</h1>
+      <p class="results-score" id="friendQuizScore">You got 0/21 question correct!</p>
+      <p class="results-message" id="friendQuizMessage"></p>
+      <p class="results-open">You may open the invite now</p>
+      <button class="primary" id="openInviteBtn" type="button">Click for Invite</button>
+    </div>
+  </section>
+
+  <section id="page2" class="page light-page">
+    <div class="two-column">
+      <div class="left">
+        <img src="showup.jpg" alt="Event Image" />
+      </div>
+
+      <div class="right text-left">
+        <h1>Show up!</h1>
+        <p><strong>Date:</strong> Saturday, 23rd May 2026</p>
+        <p><strong>Time:</strong> 16:00 for 16:30</p>
+        <p><strong>Address:</strong> 31 Swart Street, Randpark Ridge</p>
+        <p class="big-line"><strong>BOYB 🍾</strong></p>
+        <br />
+        <p><strong>Scroll for more Information</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="page3" class="page light-page dress-layout">
+    <div class="two-column">
+      <div class="left">
+        <img src="HUT.jpg" alt="Hurry Up Tomorrow" />
+        <p class="tagline"><strong>The future is calling—hurry up</strong></p>
+      </div>
+
+      <div class="right text-left dress-copy">
+        <h1 class="dress-title">Dress Code</h1>
+
+        <div class="highlight-box">
+          You have been chosen to represent <strong>Hurry Up Tomorrow</strong>
+        </div>
+
+        <ul class="dress-list">
+          <li>Tomorrow begins with my ladies—Come dressed in white</li>
+          <li>Gentlemen carry the dawn—Come dressed in cream</li>
+          <li>Casual, Comfort over beauty</li>
+        </ul>
+
+        <p class="dress-note">
+          <strong>Note:</strong> Your t-shirt/dress(ladies) should represent the dress code. Having your bottoms/pants represent the dress code is not accepted. Please and thank you
+        </p>
+
+        <br /><br />
+
+        <p class="keep-scrolling"><strong>Keep scrolling, I'm not done yet :D</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="page4" class="page light-page contact-layout">
+    <div class="page4-content">
+      <div class="two-column">
+        <div class="left text-left">
+          <h1 class="big-contact">Contact details</h1>
+          <p>Contact Nikita(Me) for more Information</p>
+          <p>If you don't want to contact me, contact my mother-Koshnee for more information</p>
+        </div>
+
+        <div class="right text-left">
+          <div class="contact-lines">
+            <p class="contact-line">
+              <span class="label">Phone Number</span><span class="colon">:</span>
+              <span class="value">0813270172</span>
+            </p>
+            <p class="contact-line">
+              <span class="label">Koshnee's Number</span><span class="colon">:</span>
+              <span class="value">0832269234</span>
+            </p>
+            <p class="contact-line">
+              <span class="label">RSVP</span><span class="colon">:</span>
+              <span class="value">There is none, you have to come</span>
+            </p>
+          </div>
+
+          <div class="quiz-teaser">
+            <h3 class="quiz-teaser-title">What song are you?</h3>
+            <p class="quiz-teaser-sub">Answer the quiz and see which song matches your vibe.</p>
+            <button id="openQuizBtn" class="quiz-play-btn" type="button">Play quiz</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="dark-footer">XO till we overdose.</footer>
+  </section>
+
+  <section class="quiz-screen" id="pageQuiz" aria-hidden="true">
+    <div class="quiz-inner">
+      <button class="quiz-back-btn" id="quizBackBtn" type="button">Back to invite</button>
+
+      <h1 class="quiz-title">Find out what song you are</h1>
+      <p class="quiz-subtitle">Pick the options that fit you best and then reveal your song.</p>
+      <p class="quiz-album">Hurry Up Tomorrow edition</p>
+
+      <form class="quiz-form" id="quizForm">
+        <div class="quiz-q quiz-name-box">
+          <h3>First, type your name.</h3>
+          <input
+            type="text"
+            id="quizName"
+            name="quizName"
+            class="quiz-name-input"
+            autocomplete="off"
+            spellcheck="false"
+            placeholder="Tap here to type your name"
+          />
+        </div>
+
+        <div class="quiz-q">
+          <h3>If you had to pick one guilty-pleasure snack at midnight, what is it?</h3>
+          <label><input type="radio" name="q1" value="Sao-Paulo" /> Chips/Popcorn</label>
+          <label><input type="radio" name="q1" value="wake-me-up" /> Chocolate/Sweets</label>
+          <label><input type="radio" name="q1" value="the-abyss" /> Ice cream</label>
+          <label><input type="radio" name="q1" value="cry-for-me" /> Pancakes/Waffles</label>
+          <label><input type="radio" name="q1" value="timeless" /> None of the above...I'm trying to be healthy</label>
+        </div>
+
+        <div class="quiz-q">
+          <h3>Pick a colour palette.</h3>
+          <label><input type="radio" name="q2" value="Sao-Paulo" /> Black, silver, sharp white</label>
+          <label><input type="radio" name="q2" value="cry-for-me" /> Red, wine, soft pink</label>
+          <label><input type="radio" name="q2" value="the-abyss" /> Midnight blue, grey, black</label>
+          <label><input type="radio" name="q2" value="wake-me-up" /> Neon blue and bright white</label>
+          <label><input type="radio" name="q2" value="timeless" /> Misty blue and lilac</label>
+        </div>
+
+        <div class="quiz-q">
+          <h3>Which language would you love to learn just for fun?</h3>
+          <label><input type="radio" name="q3" value="timeless" /> French</label>
+          <label><input type="radio" name="q3" value="Sao-Paulo" /> Spanish</label>
+          <label><input type="radio" name="q3" value="cry-for-me" /> Arabic</label>
+          <label><input type="radio" name="q3" value="the-abyss" /> Italian</label>
+          <label><input type="radio" name="q3" value="wake-me-up" /> Japanese</label>
+        </div>
+
+        <div class="quiz-q">
+          <h3>Pick your favorite genre of music.</h3>
+          <label><input type="radio" name="q4" value="the-abyss" /> Pop</label>
+          <label><input type="radio" name="q4" value="wake-me-up" /> R&B</label>
+          <label><input type="radio" name="q4" value="cry-for-me" /> 80's and 90's</label>
+          <label><input type="radio" name="q4" value="Sao-Paulo" /> Rap</label>
+          <label><input type="radio" name="q4" value="timeless" /> Amapiano</label>
+        </div>
+
+        <div class="quiz-q">
+          <h3>Which one of these places would you travel to for vacation?</h3>
+          <label><input type="radio" name="q5" value="cry-for-me" /> Japan</label>
+          <label><input type="radio" name="q5" value="Sao-Paulo" /> Brazil</label>
+          <label><input type="radio" name="q5" value="wake-me-up" /> London</label>
+          <label><input type="radio" name="q5" value="the-abyss" /> Los Angeles</label>
+          <label><input type="radio" name="q5" value="timeless" /> Canada</label>
+        </div>
+
+        <div class="quiz-q">
+          <h3>Pick a lyric.</h3>
+          <label><input type="radio" name="q6" value="wake-me-up" /> I'm losing my connection to the reality</label>
+          <label><input type="radio" name="q6" value="timeless" /> The nights are never late</label>
+          <label><input type="radio" name="q6" value="Sao-Paulo" /> Love that never fades, it's timeless</label>
+          <label><input type="radio" name="q6" value="cry-for-me" /> Tears are proof you felt it too</label>
+          <label><input type="radio" name="q6" value="the-abyss" /> One last time, say that you want me too</label>
+        </div>
+
+        <button class="primary" id="quizFinishBtn" type="button">Reveal my song</button>
+      </form>
+
+      <div class="quiz-result" id="quizResult">
+        <div class="quiz-result-inner" id="quizResultInner"></div>
+        <img id="resultCover" class="result-cover" alt="Song result cover" />
+        <p class="result-blurb" id="resultBlurb"></p>
+        <div class="quiz-result-actions">
+          <button class="quiz-retry-btn" id="quizRetryBtn" type="button">Try again</button>
+          <button class="quiz-close-btn" id="quizCloseBtn" type="button">Back to invite</button>
+        </div>
+      </div>
+
+      <div class="quiz-overlay" id="quizOverlay"></div>
+    </div>
+  </section>
+
+  <div id="neonFlood"></div>
+
+  <audio id="bgMusic" src="nigara-falls.mp3" preload="auto" loop></audio>
+  <audio id="resultAudio" preload="auto"></audio>
+  <audio id="friendResultAudio" src="Shake-it-in-the-club.mp3" preload="auto" loop></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
