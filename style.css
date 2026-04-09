@@ -239,6 +239,7 @@ button.primary:hover {
   white-space: nowrap;
 }
 
+/* ---------------- UPDATED FOOTER STYLES (from trilogy) ---------------- */
 #page4 {
   display: flex;
   flex-direction: column;
@@ -246,6 +247,7 @@ button.primary:hover {
   justify-content: flex-start;
   gap: 0;
   min-height: 100vh;
+  padding: 0;
 }
 
 #page4 .page4-content {
@@ -253,19 +255,22 @@ button.primary:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 40px;
   padding-bottom: 18px;
 }
 
 .dark-footer {
-  width: 100%;
-  background: black;
-  color: white;
-  padding: 16px 0;
   text-align: center;
-  font-weight: bold;
-  font-size: 1.8rem;
-  font-family: Rockwell, "Times New Roman", serif;
-  margin-top: auto;
+  padding: 18px 0;
+  background: #111;
+  color: white;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  position: relative;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
+  flex-shrink: 0;
 }
 
 /* Odd One Out Game Styles */
