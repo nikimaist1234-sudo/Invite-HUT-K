@@ -174,14 +174,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const SONG_PRETTY = {
     "cry-for-me": "Cry For Me",
     "the-abyss": "The Abyss",
-    "sao-paulo": "Sao Paulo",
+    "Sao-Paulo": "Sao Paulo",
     "timeless": "Timeless",
     "wake-me-up": "Wake Me Up"
   };
   const SONG_BLURB = {
     "cry-for-me": "You're soft-hearted, dramatic in the best way, and you feel everything properly.",
     "the-abyss": "You're mysterious, deep, and a little hard to read, which makes people more curious.",
-    "sao-paulo": "You carry yourself like a star. Confident, cool, and impossible to ignore.",
+    "Sao-Paulo": "You carry yourself like a star. Confident, cool, and impossible to ignore.",
     "timeless": "You're calm, pretty, and easy to be around. Quiet vibe, strong presence.",
     "wake-me-up": "You bring energy, warmth, and life into every room you walk into."
   };
